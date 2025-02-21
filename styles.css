@@ -91,3 +91,69 @@ h1 {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* Progreso General */
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    position: relative;
+}
+
+.progress-circle {
+    transform: rotate(-90deg); /* Rotamos para que inicie desde la parte superior */
+}
+
+.bg-circle {
+    fill: none;
+    stroke: #e0e0e0; /* Fondo gris del círculo */
+    stroke-width: 10;
+}
+
+.progress {
+    fill: none;
+    stroke: #4CAF50; /* Verde agradable para el progreso */
+    stroke-width: 10;
+    stroke-dasharray: 314; /* Perímetro del círculo */
+    stroke-dashoffset: 314; /* Comienza vacío */
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-text {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+/* Barra de progreso */
+.progress-bar-container {
+    width: 120px; /* El mismo tamaño que el círculo */
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    margin-top: 1.5rem; /* Ajusta la distancia entre el círculo y la barra */
+    height: 25px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Centra la barra de progreso */
+    align-items: center; /* Alineación vertical */
+    margin-left: auto;
+    margin-right: auto; /* Centra horizontalmente */
+}
+
+.progress-bar {
+    height: 100%; /* La barra llena todo el contenedor */
+    width: 0; /* Comienza en 0% y se actualizará dinámicamente */
+    background-color: #4CAF50;
+    transition: width 0.5s ease;
+}
+
+/* Descripción dinámica */
+.progress-description {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
