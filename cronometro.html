@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronómetro</title>
+    <link rel="stylesheet" href="cronometro.css">
+</head>
+<body>
+    <div class="cronometro-container">
+        <h1>Cronómetro</h1>
+        <div id="time">00:00:00.000</div>
+        <button id="startStopBtn">Iniciar</button>
+        <button id="saveSessionBtn" disabled>Guardar sesión</button>
+        <div id="sessions">
+            <h2>Sesiones Guardadas</h2>
+            <ul id="sessionList"></ul>
+            <button id="exportBtn" disabled>Exportar Sesiones</button> <!-- Botón de exportar -->
+            <input type="file" id="importFile" accept=".json"> <!-- Input para importar -->
+            <button id="importBtn">Importar Sesiones</button> <!-- Botón para importar -->
+        </div>
+    </div>
+
+    <script src="cronometro.js"></script>
+</body>
+</html>

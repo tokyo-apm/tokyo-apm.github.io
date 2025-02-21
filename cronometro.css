@@ -1,0 +1,191 @@
+/* Paleta de colores */
+:root {
+    --dark-bg: #1a1a2e;
+    --accent-color: #e94560;
+    --text-color: #ffffff;
+    --box-bg: rgba(22, 33, 62, 0.8);
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    --gradient-color-1: #0f3460;
+    --gradient-color-2: #1a1a2e;
+}
+
+/* Animación de fondo */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, var(--gradient-color-1), var(--gradient-color-2));
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s ease infinite;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Contenedor principal */
+.cronometro-container {
+    background: var(--box-bg);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    text-align: center;
+    width: 700px; /* Ancho mayor para más espacio */
+    max-width: 100%;
+    animation: fadeIn 2s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Asegura que el cronómetro esté centrado */
+}
+
+/* Título */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(233, 69, 96, 0.7);
+}
+
+/* Cronómetro */
+#time {
+    font-size: 3rem; /* Mayor tamaño para más visibilidad */
+    font-weight: bold;
+    color: var(--text-color);
+    margin: 20px 0;
+    padding: 10px;
+    background-color: var(--box-bg);
+    border-radius: 8px;
+    min-width: 300px; /* Asegura que el cronómetro sea más ancho */
+    transition: color 0.3s ease;
+}
+
+#time:hover {
+    color: var(--accent-color);
+}
+
+/* Botones */
+button {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2rem; /* Mayor tamaño de fuente */
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    width: 100%;
+}
+
+button:disabled {
+    background-color: #ccc; /* Botón deshabilitado */
+    cursor: not-allowed;
+}
+
+button:hover:enabled {
+    background-color: #d42f6b; /* Hover */
+}
+
+/* Listado de sesiones */
+#sessions {
+    margin-top: 20px;
+    width: 100%;
+}
+
+h2 {
+    font-size: 1.5rem; /* Título más grande */
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+/* Estilo para la lista de sesiones */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: var(--box-bg);
+    border-radius: 6px;
+    margin: 8px 0;
+    padding: 12px;
+    font-size: 1.1rem; /* Aumentar tamaño de texto */
+    color: var(--text-color);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li .time {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Archivo de carga para importar sesiones */
+input[type="file"] {
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 1.2rem; /* Aumentar tamaño */
+    border-radius: 6px;
+    width: 100%;
+    cursor: pointer;
+}
+
+input[type="file"]:focus {
+    outline: none;
+    border: 2px solid var(--accent-color);
+}
+
+/* Estilo para el progreso circular */
+.progress-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress-circle {
+    transform: rotate(-90deg); /* Rotamos para que inicie desde la parte superior */
+}
+
+.bg-circle {
+    fill: none;
+    stroke: #e0e0e0; /* Fondo gris del círculo */
+    stroke-width: 10;
+}
+
+.progress {
+    fill: none;
+    stroke: var(--accent-color); /* Color progresivo */
+    stroke-width: 10;
+    stroke-dasharray: 314; /* Perímetro del círculo */
+    stroke-dashoffset: 314; /* Comienza vacío */
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-text {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Descripción dinámica */
+.progress-description {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    text-align: center;
+    font-weight: bold;
+}

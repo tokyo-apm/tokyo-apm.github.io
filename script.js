@@ -49,11 +49,6 @@ function updateProgress() {
         ? "¡Felicidades! Has alcanzado la fecha objetivo 🎉"
         : `Has completado el ${Math.round(percentage)}% del camino hacia tu meta.`;
     document.getElementById('progress-description').textContent = description;
-
-    // Si ya se alcanzó la fecha objetivo, no seguir calculando
-    if (percentage === 100) {
-        document.getElementById('progress-description').textContent = "¡Felicidades! Has alcanzado la fecha objetivo 🎉";
-    }
 }
 
 // Actualización periódica
