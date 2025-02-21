@@ -3,32 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Ejemplo</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #555;
-        }
-        a {
-            color: #007BFF;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>Countdown to 11 de Enero 2027</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Bienvenido a mi Página Web</h1>
-    <p>Este es un ejemplo básico de un archivo HTML. Puedes modificarlo según tus necesidades.</p>
-    <p>Para más información, visita <a href="https://www.ejemplo.com" target="_blank">este enlace</a>.</p>
+    <div class="countdown-container">
+        <h1>Countdown to 11 de Enero 2027</h1>
+        <div class="countdown">
+            <div class="time-box">
+                <span id="days">00</span>
+                <span class="label">Días</span>
+            </div>
+            <div class="time-box">
+                <span id="hours">00</span>
+                <span class="label">Horas</span>
+            </div>
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <span class="label">Minutos</span>
+            </div>
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <span class="label">Segundos</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
